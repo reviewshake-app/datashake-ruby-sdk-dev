@@ -25,7 +25,7 @@ RSpec.describe Datashake::ReviewScraper::V2::Profiles::Reviews do
       expect(response.place_id).to eq("ChIJPVwsIAJZwokRZwG7oezgams")
       expect(response.external_identifier).to be_nil
       expect(response.meta_data).to eq(
-        {"address" => "89 E 42nd St, New York, NY 10017", "name" => "Cafe Grumpy - Grand Central Terminal", "datashake_review_uuid" => "3288163d-9ea6-3335-ab24-21dec1b6bd44"}
+        {"address" => "89 E 42nd St, New York, NY 10017", "name" => "Cafe Grumpy - Grand Central Terminal"}
       )
       expect(response.unique_id).to eq("ChIJPVwsIAJZwokRZwG7oezgams")
       expect(response.review_count).to eq(550)
@@ -52,6 +52,7 @@ RSpec.describe Datashake::ReviewScraper::V2::Profiles::Reviews do
       expect(review.language_code).to be_nil
       expect(review.unique_id).to eq("109955990550898390948")
       expect(review.meta_data).to be_nil
+      expect(review.datashake_review_uuid).to eq("41b45b90-15d8-3674-829d-dc85fed95e2c")
       expect(review.response.id).to eq(419632310)
       expect(review.response.name).to eq("Response from the owner")
       expect(review.response.date).to eq(Date.parse("2021-11-11"))
@@ -105,6 +106,7 @@ RSpec.describe Datashake::ReviewScraper::V2::Profiles::Reviews do
         expect(review.language_code).to be_nil
         expect(review.unique_id).to eq("112986693786969480124")
         expect(review.meta_data).to be_nil
+        expect(review.datashake_review_uuid).to eq("41b45b90-15d8-3674-829d-dc85fed95e2d")
       end
     end
   end
